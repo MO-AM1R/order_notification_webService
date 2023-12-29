@@ -1,6 +1,19 @@
 package com.web.service.orderApp.Controllers;
 import com.web.service.orderApp.BusinessLogic.CustomerBsl;
+import com.web.service.orderApp.Models.Customer;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
+@RestController
 public class CustomerController {
-	private CustomerBsl customerBsl;
+	private final CustomerBsl customerBsl;
+
+	public CustomerController() {
+		this.customerBsl = new CustomerBsl();
+	}
+	@GetMapping(value = "/users/login")
+	Customer login(@RequestParam String email, @RequestParam String password){
+		return customerBsl.login(email, password);
+	}
 }
