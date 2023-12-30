@@ -44,5 +44,13 @@ public class ProductBsl {
 		}
 		return countCategoryProducts.size() > 0 ? countCategoryProducts : null;
 	}
+	public Product search(String id){
+		for(Product p: products){
+			if(p.getSerialNumber().equals(id)){
+				return p;
+			}
+		}
+		return null;
+	}
 
 }

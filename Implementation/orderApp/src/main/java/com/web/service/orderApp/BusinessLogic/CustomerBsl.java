@@ -22,4 +22,11 @@ public class CustomerBsl {
         }
 		return null;
 	}
+    public Customer search(String userName){
+        for(Customer customer: customers){
+            if(customer.getUserName().equals(userName))
+                return customer;
+        }
+        return null;
+    }
 }
