@@ -6,7 +6,7 @@ import java.util.Vector;
 
 @Service
 public class CustomerBsl {
-	private List<Customer> customers = new Vector<>()
+	private final List<Customer> customers = new Vector<>()
 	{{
 		add(new Customer("3abdo@gmail.com", "Paswword1", "Abdo", 1500, "011100011", new Vector<>())) ;
 		add(new Customer("badr@gmail.com", "Paswword1", "badr", 1500, "011100011", new Vector<>())) ;

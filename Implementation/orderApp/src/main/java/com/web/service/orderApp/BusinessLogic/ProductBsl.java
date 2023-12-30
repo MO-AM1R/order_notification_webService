@@ -1,15 +1,11 @@
 package com.web.service.orderApp.BusinessLogic;
-import ch.qos.logback.core.joran.sanity.Pair;
-import ch.qos.logback.core.model.INamedModel;
-import com.web.service.orderApp.Models.Customer;
 import com.web.service.orderApp.Models.Product;
 import org.springframework.stereotype.Service;
-
 import java.util.*;
 
 @Service
 public class ProductBsl {
-	private List<Product> products = new Vector<>()
+	private final List<Product> products = new Vector<>()
 	{{
 		add(new Product("Food", "Meat", "FM00", "Atyab", 64.5, 30));
 		add(new Product("Food", "Chicken", "FC00", "Ikhwan", 65, 20));
@@ -24,8 +20,6 @@ public class ProductBsl {
 		add(new Product("Cars", "Corolla", "CC00", "Toyouta", 1400000, 9));
 
 	}};
-
-
 
 	public List<Product> showProducts()
 	{
@@ -52,5 +46,4 @@ public class ProductBsl {
 		}
 		return null;
 	}
-
 }
