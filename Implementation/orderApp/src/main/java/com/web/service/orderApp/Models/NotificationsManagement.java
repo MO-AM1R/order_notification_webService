@@ -1,18 +1,25 @@
 package com.web.service.orderApp.Models;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
+import org.springframework.stereotype.Component;
+
+
+@Setter
+@AllArgsConstructor
+@Getter
 public class NotificationsManagement {
 
-	private final IChannel channel;
-	private final NotificationsManagement notificationTemplate;
+	private IChannel channel;
+	private NotificationsManagement notificationTemplate;
+	Language language;
 
 	/**
-	 * 
+	 *
 	 * @param channel
 	 * @param notificationTemplate
 	 */
-	public NotificationsManagement(IChannel channel, NotificationsManagement notificationTemplate) {
-		this.channel = channel ;
-		this.notificationTemplate = notificationTemplate;
-	}
+
 
 }
