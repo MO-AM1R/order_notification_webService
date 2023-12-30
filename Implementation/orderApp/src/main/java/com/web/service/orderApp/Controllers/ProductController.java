@@ -23,5 +23,9 @@ public class ProductController {
 	{
 		return productBsl.showProducts();
 	}
-
+	@GetMapping(value = "/countProductsInCategory")
+	public Map<String, Integer> countProductsInCategory(@RequestParam String category)
+	{
+		return productBsl.countProductsInCategory(category);
+	}
 }

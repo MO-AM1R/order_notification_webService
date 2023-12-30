@@ -31,6 +31,18 @@ public class ProductBsl {
 	{
 		return  products;
 	}
+	public Map<String, Integer> countProductsInCategory(String category)
+	{
+		Map<String, Integer> countCategoryProducts =new HashMap<>();
 
+		for(Product product : products)
+		{
+			if(product.getCategory().equals(category))
+			{
+				countCategoryProducts.put(product.getName(), product.getQuantity());
+			}
+		}
+		return countCategoryProducts.size() > 0 ? countCategoryProducts : null;
+	}
 
 }
