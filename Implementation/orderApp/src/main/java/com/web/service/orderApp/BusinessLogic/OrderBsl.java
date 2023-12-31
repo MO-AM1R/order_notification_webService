@@ -21,8 +21,7 @@ public class OrderBsl {
 		put("badr", new Vector<>(){{
 			add(
 				new Order(new Vector<>(){{
-					add(new Product("Cars", "Corolla", "CC00", "Toyouta", 1400000, 9));
-					add(new Product("Cars", "Elentra", "CA00", "Hyundai", 1500000, 7));
+					add(new Product("Electronics", "HeadPhone", "EH00", "Aula", 650, 50));
 				}},
 						OrderStatus.SHIPPED,
 						new Date(),

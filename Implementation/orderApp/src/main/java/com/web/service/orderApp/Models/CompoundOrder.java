@@ -1,25 +1,20 @@
 package com.web.service.orderApp.Models;
 import lombok.Getter;
-
 import java.util.List;
 import java.util.Vector;
 
 @Getter
 public class CompoundOrder implements IOrder {
-	private List<IOrder> orders;
+	private final List<IOrder> orders;
 	String id ;
-	/**
-	 * 
-	 * @param order
-	 */
+
+	public CompoundOrder(){
+		orders = new Vector<>();
+	}
 	public void addOrder(IOrder order) {
 		orders.add(order);
 	}
 
-	/**
-	 * 
-	 * @param order
-	 */
 	public void cancelOrder(IOrder order) {
 		orders.remove(order);
 	}
