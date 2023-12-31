@@ -1,17 +1,19 @@
 package com.web.service.orderApp.BusinessLogic;
-import com.web.service.orderApp.Models.Customer;
-import com.web.service.orderApp.Models.Product;
 import org.springframework.stereotype.Service;
+import com.web.service.orderApp.Models.*;
 import java.util.List;
 import java.util.Vector;
 
 @Service
 public class CustomerBsl {
-    private static List<Customer> customers = new Vector<>()
+    private final List<Customer> customers = new Vector<>()
     {{
-        add(new Customer("3abdo@gmail.com", "Paswword1", "Abdo", 1500, "011100011", new Vector<>())) ;
-        add(new Customer("badr@gmail.com", "Paswword1", "badr", 1500, "011100011", new Vector<>())) ;
-        add(new Customer("mohamed@gmail.com", "Paswword1", "MoAmir", 1500, "011100011", new Vector<>())) ;
+        add(new Customer("3abdo@gmail.com", "Paswword1", "Abdo",
+                1500, "011100011", new Vector<>(), new SMS(new Email(new Channel())), "Arabic")) ;
+        add(new Customer("badr@gmail.com", "Paswword1", "badr", 1500, "011100011", new Vector<>(),
+                new SMS(new Channel()), "English")) ;
+        add(new Customer("mohamed@gmail.com", "Paswword1", "MoAmir", 1500, "011100011", new Vector<>(),
+                new Email(new Channel()), "Arabic")) ;
     }};
 
     public String register(Customer customer){
@@ -22,7 +24,6 @@ public class CustomerBsl {
         }
         customers.add(customer);
         return "added successfully";
-
     }
     public String login(String email, String password) {
         for (Customer customer : customers) {

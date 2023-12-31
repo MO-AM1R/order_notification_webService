@@ -1,15 +1,19 @@
 package com.web.service.orderApp.Models;
+import org.springframework.stereotype.Component;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
 
+@Component
+@AllArgsConstructor
+@Getter
+@Setter
 public abstract class BaseChannel implements IChannel {
 
-	private final IChannel channel;
+	private IChannel channel;
 
-	/**
-	 * 
-	 * @param channel
-	 */
-	public BaseChannel(Channel channel) {
-		this.channel = channel ;
+	@Override
+	public String toString() {
+		return channel.toString();
 	}
-
 }

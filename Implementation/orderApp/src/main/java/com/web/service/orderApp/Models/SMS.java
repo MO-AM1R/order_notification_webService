@@ -4,7 +4,11 @@ public class SMS extends BaseChannel {
     /**
      * @param channel
      */
-    public SMS(Channel channel) {
+    public SMS(IChannel channel) {
         super(channel);
+    }
+    @Override
+    public String toString() {
+        return "Email";
     }
 }

@@ -1,8 +1,14 @@
 package com.web.service.orderApp.Models;
-public class PlacementNotification extends NotificationTemplates {
-	private String subject;
+import lombok.Getter;
+import lombok.Setter;
 
+@Setter
+@Getter
+public class PlacementNotification extends NotificationTemplates {
 	public PlacementNotification(String content, String subject) {
 		super(content, subject);
+	}
+	public PlacementNotification(){
+		super("", "");
 	}
 }
