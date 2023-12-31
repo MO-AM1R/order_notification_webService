@@ -1,8 +1,11 @@
 package com.web.service.orderApp.Models;
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.stereotype.Component;
+
 import java.util.List;
 import java.util.Random;
+import java.util.Vector;
 
 @Getter
 @Setter
@@ -13,11 +16,12 @@ public class Customer {
 	private double balance;
 	private String phoneNumber;
 	private List<IOrder> orders;
+	private Cart cart;
 	private IChannel iChannel;
 	private String language;
 
 	public Customer(String email, String password, String userName, double balance, String phoneNumber, List<IOrder> orders,
-					IChannel iChannel, String language) {
+					Cart cart, IChannel iChannel, String language) {
 		this.email = email;
 		this.password = password;
 		this.userName = userName;
@@ -27,13 +31,18 @@ public class Customer {
 		this.language = language;
 
 		this.iChannel = iChannel ;
-		if (iChannel != null){
+		if (this.iChannel == null){
+			IChannel[] channels = new IChannel[]{new Email(new Channel()), new SMS(new Channel()), new Email(new SMS(new Channel()))};
+			Random rand = new Random();
+			int randOption = rand.nextInt(3);
+			this.iChannel = channels[randOption];
+		}
+
+		this.cart = cart ;
+		if (this.cart != null){
 			return;
 		}
-		IChannel[] channels = new IChannel[]{new Email(new Channel()), new SMS(new Channel()), new Email(new SMS(new Channel()))};
-		Random rand = new Random();
-		int randOption = rand.nextInt(3);
-		this.iChannel = channels[randOption];
+		this.cart = new Cart(new Vector<>());
 	}
 
 	@Override
@@ -45,6 +54,7 @@ public class Customer {
 				", balance=" + balance +
 				", phoneNumber='" + phoneNumber + '\'' +
 				", orders=" + orders +
+				", cart=" + cart +
 				", iChannel=" + iChannel.toString() +
 				", language='" + language + '\'' +
 				'}';

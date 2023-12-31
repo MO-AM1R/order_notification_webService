@@ -12,7 +12,6 @@ public class Order implements IOrder {
 	private final List<Product> products;
 	private final OrderStatus orderStatus;
 	private final Date date;
-	private final double totalPrice;
 	private final String id ;
 
 	public double calculatePrice() {
