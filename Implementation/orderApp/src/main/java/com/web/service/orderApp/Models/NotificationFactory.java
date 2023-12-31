@@ -1,5 +1,5 @@
 package com.web.service.orderApp.Models;
 
 public interface NotificationFactory {
-    NotificationTemplates createNotification();
+    NotificationTemplates createNotification(String userName, IOrder order);
 }

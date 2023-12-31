@@ -1,9 +1,13 @@
 package com.web.service.orderApp.Models;
-import java.util.List;
+import lombok.Getter;
 
+import java.util.List;
+import java.util.Vector;
+
+@Getter
 public class CompoundOrder implements IOrder {
 	private List<IOrder> orders;
-
+	String id ;
 	/**
 	 * 
 	 * @param order
@@ -26,5 +30,13 @@ public class CompoundOrder implements IOrder {
 			ans += order.calculatePrice();
 		}
 		return ans ;
+	}
+	@Override
+	public List<Product> getProducts() {
+		List<Product> products = new Vector<>();
+        for (IOrder order : orders) {
+            products.addAll(order.getProducts());
+        }
+		return products;
 	}
 }
