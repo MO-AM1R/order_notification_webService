@@ -41,9 +41,13 @@ public class CustomerBsl {
         }
         return null;
     }
-    public List<Customer> showCustomers()
+    public String showCustomers()
     {
-        return  customers;
+        StringBuilder stringBuilder = new StringBuilder("[");
+        for (Customer customer : customers) {
+            stringBuilder.append(customer.toString()).append('\n');
+        }
+        return stringBuilder.append(']').toString();
     }
 }
 

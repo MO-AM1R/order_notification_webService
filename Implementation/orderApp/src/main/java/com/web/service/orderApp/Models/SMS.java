@@ -1,5 +1,7 @@
 package com.web.service.orderApp.Models;
 
+import java.util.Objects;
+
 public class SMS extends BaseChannel {
     /**
      * @param channel
@@ -9,6 +11,7 @@ public class SMS extends BaseChannel {
     }
     @Override
     public String toString() {
-        return "Email";
+        return Objects.equals(super.toString(), "") ? "SMS"
+                : ("SMS and " + super.toString()) ;
     }
 }

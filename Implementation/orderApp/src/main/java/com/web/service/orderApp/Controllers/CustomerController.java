@@ -21,7 +21,7 @@ public class CustomerController {
 	}
 
 	@GetMapping(value = "/users/showCustomers")
-	List<Customer> showCustomers(){
+	String showCustomers(){
 		return customerBsl.showCustomers();
 	}
 }

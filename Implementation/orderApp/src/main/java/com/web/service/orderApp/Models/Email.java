@@ -1,5 +1,7 @@
 package com.web.service.orderApp.Models;
 
+import java.util.Objects;
+
 public class Email extends BaseChannel {
 
     /**
@@ -8,9 +10,9 @@ public class Email extends BaseChannel {
     public Email(IChannel channel) {
         super(channel);
     }
-
     @Override
     public String toString() {
-        return "Email";
+        return Objects.equals(super.toString(), "") ? "Email"
+                : ("Email and "  + super.toString()) ;
     }
 }
