@@ -1,4 +1,4 @@
-package com.web.service.orderApp.BusinessLogic;
+package com.web.service.orderApp.Models;
 import com.web.service.orderApp.Models.NotificationTemplates;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;

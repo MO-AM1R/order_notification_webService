@@ -8,7 +8,4 @@ public class OrderShipmentNotification extends NotificationTemplates {
 	public OrderShipmentNotification(String content, String subject) {
 		super(content, subject);
 	}
-	public OrderShipmentNotification() {
-		super("", "");
-	}
 }

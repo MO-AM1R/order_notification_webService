@@ -8,7 +8,4 @@ public class PlacementNotification extends NotificationTemplates {
 	public PlacementNotification(String content, String subject) {
 		super(content, subject);
 	}
-	public PlacementNotification(){
-		super("", "");
-	}
 }
