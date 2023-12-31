@@ -8,4 +8,6 @@ public class SingletonHelper {
     private static CustomerBsl customerBsl = new CustomerBsl();
     @Getter
     private static ProductBsl productBsl = new ProductBsl();
+    @Getter
+    private static NotificationBsl notificationBsl = new NotificationBsl();
 }

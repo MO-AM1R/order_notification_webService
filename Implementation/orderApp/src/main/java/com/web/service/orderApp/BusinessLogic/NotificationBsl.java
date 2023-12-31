@@ -1,10 +1,12 @@
 package com.web.service.orderApp.BusinessLogic;
 import com.web.service.orderApp.Models.NotificationTemplates;
 import com.web.service.orderApp.Models.PlacementNotification;
+import org.springframework.stereotype.Service;
 
 import java.util.LinkedList;
 import java.util.Queue;
 
+@Service
 public class NotificationBsl {
 	private final Queue<Pair> notifications = new LinkedList<>(){{
 		push(new Pair(new PlacementNotification
@@ -18,5 +20,9 @@ public class NotificationBsl {
 	public void addNotification(NotificationTemplates template, String userName) {
 		Pair pair = new Pair(template, userName) ;
 		notifications.add(pair);
+	}
+
+	public String showNotifications() {
+		return notifications.toString();
 	}
 }

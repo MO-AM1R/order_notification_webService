@@ -19,7 +19,7 @@ public class OrderController {
 	}
 
 	public void createNotification(String userName, IOrder order){
-		NotificationBsl notificationBsl = new NotificationBsl();
+		NotificationBsl notificationBsl = SingletonHelper.getNotificationBsl();
 
 		NotificationFactory factory = new OrderPlacementFactory();
 		NotificationTemplates template = factory.createNotification(userName, order);

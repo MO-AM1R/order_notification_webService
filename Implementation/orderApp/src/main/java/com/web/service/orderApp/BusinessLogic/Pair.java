@@ -9,10 +9,11 @@ public class Pair{
 	private NotificationTemplates template;
 	private String userName;
 
-	String first(){
-		return userName;
-	}
-	NotificationTemplates secone(){
-		return template;
+	@Override
+	public String toString() {
+		return "Pair{" +
+				"template=" + template +
+				", userName='" + userName + '\'' +
+				"}\n";
 	}
 }
